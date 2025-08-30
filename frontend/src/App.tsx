@@ -1,34 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useMemo, createContext } from 'react'
+import { createTheme, CssBaseline, ThemeProvider, type PaletteMode } from '@mui/material'
+import { SnackbarProvider } from 'notistack';
+import { RouterProvider } from 'react-router';
 import './App.css'
+import { router } from './utils/router';
 
-function App() {
-  const [count, setCount] = useState(0)
 
+const ColorModeContext = createContext({ toggleThemeMode:()=> { } });
+
+const App = () => {
+  const [mode, setmode] = useState<PaletteMode>("light");
+
+  
+  const colorMode = useMemo(
+    ()=>({
+    toggleThemeMode : () => {
+      setmode((previous: PaletteMode)=> (previous === "light"? "dark" : "light"));
+    },
+  }), 
+  [],
+);
+
+
+  //Update the theme only when mode changes
+  const theme = useMemo (
+    ()=>
+      createTheme({
+        palette:{
+          mode,
+        },
+      }),[mode],
+    );
+
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <SnackbarProvider maxSnack={3} autoHideDuration={2000}>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+            <RouterProvider router={router} />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </SnackbarProvider>
   )
 }
 
