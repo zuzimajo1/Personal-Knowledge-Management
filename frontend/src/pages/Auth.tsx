@@ -29,9 +29,12 @@ return (
 const LoginWrapper : React.FC = ()=>{
   return (
     <Container width='100%' height='100%' padding='20px' >
-      <TypographyText variant='h5' text='Login' textAlign='center'fontSize="2rem" />
-      <Container border='1px solid red' height='auto' padding='var(--padding-sm)'> 
+      <TypographyText variant='h5' fontWeight='600' text='Login' textAlign='center'fontSize="2rem" />
+      <Container border='1px solid red' height='auto' padding='var(--padding-sm)' margin='var(--padding-md) 0 0 0'> 
         <LoginForm />
+      </Container>
+      <Container>
+        <TypographyText variant='h6' fontSize='0.8rem' text='Forgot Password?' textAlign='right' />
       </Container>
     </Container>
   )
