@@ -1,7 +1,8 @@
 import type React from 'react'
 import { AuthSection, Container, MainContainer } from '../styles/Container.styled'
-import { TypographyText } from '../components';
+import { ButtonComponent, TypographyText } from '../components';
 import { Form, Input } from '../styles/Auth.styled';
+
 
 
 export const Auth: React.FC = ()=> {
@@ -16,7 +17,6 @@ return (
 }
 
 
-
  const LoginContainer: React.FC = ()=>{
   
   return (
@@ -28,14 +28,12 @@ return (
 
 const LoginWrapper : React.FC = ()=>{
   return (
-    <Container width='100%' height='100%' padding='20px' >
-      <TypographyText variant='h5' fontWeight='600' text='Login' textAlign='center'fontSize="2rem" />
-      <Container border='1px solid red' height='auto' padding='var(--padding-sm)' margin='var(--padding-md) 0 0 0'> 
+    <Container width='100%' height='100%' padding='20px 30px' >
+      <TypographyText variant='h5' fontWeight='600' text='Login' textAlign='center'fontSize="2rem" margin='var(--margin-lg) 0' />
         <LoginForm />
-      </Container>
-      <Container>
-        <TypographyText variant='h6' fontSize='0.8rem' text='Forgot Password?' textAlign='right' />
-      </Container>
+        <TypographyText variant='h6' fontWeight='400' text="Forgot Password?" textAlign='right' fontSize="0.9rem" margin='var(--margin-sm) 0 0 0' />
+        <ButtonComponent width='100%' text='login' textTransform='uppercase' borderRadius='2rem' backgroundColorLight='#79AFE7' margin='var(--margin-sm) 0' />
+        <LoginOptions/>
     </Container>
   )
 }
@@ -43,8 +41,19 @@ const LoginWrapper : React.FC = ()=>{
 const LoginForm: React.FC = ()=>{
   return (
     <Form>
-      <Input size='small' label='Email' name='email' />
-      <Input size='small' label='Password' name='password'/>
+      <Input variant="standard" size='small' label='Email' name='email' />
+      <Input variant="standard" size='small' label='Password' name='password'/>
     </Form>
+  )
+}
+
+
+const LoginOptions: React.FC = ()=>{
+  return (
+
+    <Container width='100%' margin='var(--margin-md) 0'>
+      <TypographyText text='Or Sign Up Using'  textAlign='center'/>
+
+    </Container>
   )
 }
