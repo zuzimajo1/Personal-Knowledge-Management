@@ -1,2 +1,2 @@
 export { TypographyText } from "./Text/TypographyText";
-export { ButtonComponent } from "./Button/Button"
+export { ButtonComponent } from "./Button/Button";

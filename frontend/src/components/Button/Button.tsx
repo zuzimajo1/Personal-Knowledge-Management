@@ -12,6 +12,7 @@ type ButtonProps = {
     textAlign?: "center" | "left" | "right" | "justify";
     background?: 'none';
     outline?: 'none';
+    height?: string;
     
 
 
@@ -20,7 +21,7 @@ type ButtonProps = {
 
 
 
-const Button = styled('button')<ButtonProps>(({theme, width, margin, background, outline, textAlign, padding, borderRadius, textTransform, backgroundColorLight, backgroundColorDark })=>({
+const Button = styled('button')<ButtonProps>(({theme, width, margin, background, height, outline, textAlign, padding, borderRadius, textTransform, backgroundColorLight, backgroundColorDark })=>({
     width,
     padding,
     borderRadius,
@@ -34,6 +35,7 @@ const Button = styled('button')<ButtonProps>(({theme, width, margin, background,
     textAlign,
     background,
     outline,
+    height,
 
 
 }))
@@ -45,3 +47,6 @@ export const ButtonComponent: React.FC<ButtonProps> = (props)=>{
     )
 
 }
+
+
+
