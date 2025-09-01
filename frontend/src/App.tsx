@@ -2,6 +2,7 @@ import { useState, useMemo, createContext } from 'react'
 import { createTheme, CssBaseline, ThemeProvider, type PaletteMode } from '@mui/material'
 import { SnackbarProvider } from 'notistack';
 import { RouterProvider } from 'react-router';
+
 import './App.css'
 import { router } from './utils/router';
 
