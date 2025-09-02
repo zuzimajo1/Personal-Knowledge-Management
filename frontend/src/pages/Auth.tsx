@@ -5,7 +5,8 @@ import { Form, Input } from '../styles/Auth.styled';
 import { IconButton, Stack } from '@mui/material';
 import { Brightness3, Facebook, GitHub, Google, WbSunny } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
-
+import { ColorModeContext } from '../ColorModeContent';
+import { useContext } from 'react';
 
 export const Auth: React.FC = ()=> {
 return (
@@ -14,13 +15,13 @@ return (
       <LoginContainer/>
     </AuthSection>
   </MainContainer>
-)
+  )
 }
 
 
  const LoginContainer: React.FC = ()=>{
   return (
-    <Container width='calc(20vw)' height='auto' justifyContent='center' alignItems='center' backgroundColorLight='#f5f5f5' backgroundColorDark='#333' borderRadius='10px' border='1px solid #ccc' >
+    <Container width='calc(20vw)' height='auto' justifyContent='center' alignItems='center' backgroundColorLight='#f5f5f5' backgroundColorDark='#4d4a4aff' borderRadius='10px' border='1px solid #ccc' >
       <LoginWrapper/>
     </Container>
   )
@@ -47,10 +48,9 @@ const LoginForm: React.FC = ()=>{
   )
 }
 
-
 const LoginOptions: React.FC = ()=>{
   const theme = useTheme();
-
+  const { toggleThemeMode } = useContext(ColorModeContext);
 
 
   return (
@@ -69,10 +69,10 @@ const LoginOptions: React.FC = ()=>{
         </Stack>
         <Container display='flex' flexDirection='row' justifyContent='center' width='100%' height='auto' margin='var(--margin-lg) 0 0 0'>
         <Container border='1px solid gray' height='auto' width='auto' backgroundColorLight='#e9ebeeff' borderRadius='2rem'>
-          <IconButton size='small' sx={{ visibility: theme.palette.mode === 'light' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s' }}>
+          <IconButton size='small' onClick={toggleThemeMode}  sx={{ visibility: theme.palette.mode === 'light' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s', transition: 'opacity 0.5s', transitionDelay: '0.3s' }}>
             <WbSunny fontSize='medium' htmlColor='#a7a738ff'  />
           </IconButton>
-          <IconButton size='small' sx={{ visibility: theme.palette.mode === 'dark' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s' }}>
+          <IconButton size='small' onClick={toggleThemeMode} sx={{ visibility: theme.palette.mode === 'dark' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s' , transition: 'opacity 0.5s', transitionDelay: '0.3s' }}>
           <Brightness3 fontSize='medium' htmlColor='#4d4d7dff'  />
           </IconButton>
         </Container>

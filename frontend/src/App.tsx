@@ -1,17 +1,13 @@
-import { useState, useMemo, createContext } from 'react'
+import { useState, useMemo} from 'react'
 import { createTheme, CssBaseline, ThemeProvider, type PaletteMode } from '@mui/material'
 import { SnackbarProvider } from 'notistack';
 import { RouterProvider } from 'react-router';
-
 import './App.css'
 import { router } from './utils/router';
-
-
-const ColorModeContext = createContext({ toggleThemeMode:()=> { } });
+import { ColorModeContext } from './ColorModeContent';
 
 const App = () => {
   const [mode, setmode] = useState<PaletteMode>("light");
-
   
   const colorMode = useMemo(
     ()=>({
@@ -21,7 +17,6 @@ const App = () => {
   }), 
   [],
 );
-
 
   //Update the theme only when mode changes
   const theme = useMemo (

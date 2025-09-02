@@ -13,12 +13,7 @@ type ButtonProps = {
     background?: 'none';
     outline?: 'none';
     height?: string;
-    
-
-
 }
-
-
 
 
 const Button = styled('button')<ButtonProps>(({theme, width, margin, background, height, outline, textAlign, padding, borderRadius, textTransform, backgroundColorLight, backgroundColorDark })=>({
@@ -31,13 +26,11 @@ const Button = styled('button')<ButtonProps>(({theme, width, margin, background,
     textTransform,
     backgroundColor: theme.palette.mode === 'light' ? backgroundColorLight : backgroundColorDark,
     margin,
-    color: theme.palette.mode === 'light' ? "#fff" : "#000",
+    color: theme.palette.mode === 'light' ? "#fff" : "#747171ff",
     textAlign,
     background,
     outline,
     height,
-
-
 }))
 
 
@@ -45,7 +38,6 @@ export const ButtonComponent: React.FC<ButtonProps> = (props)=>{
     return(
         <Button {...props}>{props.text}</Button>
     )
-
 }
 
 
