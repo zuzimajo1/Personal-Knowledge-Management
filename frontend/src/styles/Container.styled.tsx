@@ -14,7 +14,6 @@ export interface ContainerProp {
     backgroundColorDark?: string;
     borderRadius?: string;
     margin?: string;
-
 }
 
 
