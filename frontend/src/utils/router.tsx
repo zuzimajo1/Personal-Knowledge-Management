@@ -1,6 +1,6 @@
 
 import { createBrowserRouter, } from 'react-router';
-import { Auth } from '../pages';
+import { Root } from '../pages';
 
 
 // Utility to pause for a given number of milliseconds
@@ -35,7 +35,7 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Auth,
+    Component: Root,
     loader: async () =>{
         await wait(2000)
     }
