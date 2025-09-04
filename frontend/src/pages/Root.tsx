@@ -3,6 +3,6 @@ import { MainContainer } from '../styles/Container.styled'
 
 export const Root = () => {
   return (
-    <MainContainer>Hello Root</MainContainer>
+    <MainContainer>Hello Home</MainContainer>
   )
 }
