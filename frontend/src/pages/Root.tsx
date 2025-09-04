@@ -1,7 +1,8 @@
 import React from 'react'
+import { MainContainer } from '../styles/Container.styled'
 
 export const Root = () => {
   return (
-    <div>Hello Root</div>
+    <MainContainer>Hello Root</MainContainer>
   )
 }
