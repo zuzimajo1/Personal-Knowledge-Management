@@ -48,6 +48,8 @@ export const MainContainer = styled('main')(({theme})=>({
 }))
 
 
+
+
 export const AutoVerticalContainer = styled('div')({
     display: "flex",
     height: "auto",
