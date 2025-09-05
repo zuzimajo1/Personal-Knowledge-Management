@@ -1,8 +1,23 @@
 import React from 'react'
-import { MainContainer } from '../styles/Container.styled'
+import { HomeContainer, NavbarContainer } from '../styles/Home.styled'
+import { TypographyText } from '../components'
 
 export const Root = () => {
   return (
-    <MainContainer>Hello Home</MainContainer>
+    <HomeContainer>
+      <NavbarComponent/>
+
+
+    </HomeContainer>
+  )
+}
+
+
+const NavbarComponent = () =>{
+  return (
+    <NavbarContainer> 
+      <TypographyText text='Insight Journal' textAlign='left' fontSize='1.5rem' />
+
+    </NavbarContainer>
   )
 }
