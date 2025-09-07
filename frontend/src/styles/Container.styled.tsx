@@ -14,6 +14,8 @@ export interface ContainerProp {
     backgroundColorDark?: string;
     borderRadius?: string;
     margin?: string;
+    position?: "relative" | "absolute" | "fixed" | "sticky" | "static";
+    top?: string,
 }
 
 
@@ -29,6 +31,8 @@ export const Container = styled('div')<ContainerProp>((props)=>({
     borderRadius: props.borderRadius,
     flexDirection : props.vertical ? "column" : "row",
     backgroundColor: props.theme.palette.mode === "light" ? props.backgroundColorLight : props.backgroundColorDark,
+    position: props.position,
+    top: props.top,
 
 }))
 
@@ -46,8 +50,6 @@ export const MainContainer = styled('main')(({theme})=>({
     height: "100vh",
     backgroundColor: theme.palette.mode === "light" ? "rgba(106,200,225,255)" : "rgba(14,51,95,255)",
 }))
-
-
 
 
 export const AutoVerticalContainer = styled('div')({
