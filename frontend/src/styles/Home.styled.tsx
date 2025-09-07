@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 
 export const HomeContainer = styled('main')(({theme})=>({
     width: "100vw",
@@ -7,11 +7,9 @@ export const HomeContainer = styled('main')(({theme})=>({
 })) 
 
 
-
-
 export const NavbarContainer = styled('nav')(({theme})=>({
     width: "100%",
-    height: "60px",
+    height: "auto",
     backgroundColor: theme.palette.mode === 'light' ? "#fff" : "#000",
     boxShadow: theme.palette.mode === 'light' ? "0 2px 4px rgba(0,0,0,0.1)" : "0 2px 4px rgba(255,255,255,0.1)",
     position: "fixed",
@@ -20,6 +18,13 @@ export const NavbarContainer = styled('nav')(({theme})=>({
     zIndex: 1000,   
     display: "flex",
     alignItems: "center",
-    padding: "0 20px",
+    padding: "var(--padding-sm)",
 
+}))
+
+export const SideBarBox = styled(Box)(({theme})=>({
+    width: 250, 
+    height: "100%",
+    backgroundColor: theme.palette.mode === 'light' ? "#fff" : "#000",
+    boxShadow: theme.palette.mode === 'light' ? "0 2px 4px rgba(0,0,0,0.1)" : "0 2px 4px rgba(255,255,255,0.1)",
 }))
