@@ -1,8 +1,4 @@
-import React from 'react'
 import { alpha, InputBase, styled } from '@mui/material'
-
-
-
 
 export const SearchBarContainer = styled('div')(({ theme })=>({
     display: 'flex',
