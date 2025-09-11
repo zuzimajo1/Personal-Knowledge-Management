@@ -9,6 +9,23 @@ import { Container } from '../styles/Container.styled'
 
 export const Root: React.FC = () => {
 
+
+
+
+  return (
+    <HomeContainer>
+      <NavbarComponent/>
+      {/* <ContentComponent> */}
+      <SideBar/>
+      {/* </ContentComponent> */}
+      <Home/>
+    </HomeContainer>
+  )
+}
+
+
+const Home: React.FC = () => {
+
   const actions = [
   { icon: <FileCopy />, name: 'Copy' },
   { icon: <Save />, name: 'Save' },
@@ -19,21 +36,15 @@ export const Root: React.FC = () => {
 
 
   return (
-    <HomeContainer>
-      <NavbarComponent/>
-      <ContentComponent>
-      <SideBar/>
-      </ContentComponent>
-      <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
-      <SpeedDial ariaLabel='' sx={{position: 'absolute', bottom: 16, right: 16}}
-        icon={<SpeedDialIcon />}
+    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 ,position: 'absolute', bottom: 16, right: 16  }}>
+      <SpeedDial ariaLabel='' sx={{ }}
+        icon={<SpeedDialIcon sx={{overflow: 'hidden'}} />}
       >
         {actions.map((action, index)=>(
           <SpeedDialAction key={index} icon={action.icon} title={action.name} />
         ))}
       </SpeedDial>
-    </Box>
-    </HomeContainer>
+      </Box>
   )
 }
 
@@ -74,8 +85,7 @@ const SideBar : React.FC = ()=>{
 
   return(
     <SideBarBox role='presentation'>
-    
-    <List>
+    <List sx={{ margin: 'var(--margin-sm) 0' }}>
       {ListOptions.map((props, index)=>(
         <ListItem key={index}>
           <ListItemButton>

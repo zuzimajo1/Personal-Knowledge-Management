@@ -4,6 +4,7 @@ export const HomeContainer = styled('main')(({theme})=>({
     width: "100vw",
     height: "100vh",
     backgroundColor: theme.palette.mode === 'light' ? "#DDEFFD" : "#1A072D",
+    overflowY: "hidden",
 })) 
 
 
@@ -23,6 +24,9 @@ export const NavbarContainer = styled('nav')(({theme})=>({
 }))
 
 export const SideBarBox = styled(Box)(({theme})=>({
+    position: "relative",
+    top: "6vh",
+    left: 0,
     width: 250, 
     height: "100%",
     backgroundColor: theme.palette.mode === 'light' ? "#fff" : "#000",
