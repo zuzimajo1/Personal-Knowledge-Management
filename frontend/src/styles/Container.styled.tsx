@@ -46,6 +46,7 @@ export const AuthSection = styled('section')({
 })
 
 export const MainContainer = styled('main')(({theme})=>({
+    flex: 1,
     width: "100vw",
     height: "100vh",
     backgroundColor: theme.palette.mode === "light" ? "rgba(106,200,225,255)" : "rgba(14,51,95,255)",
