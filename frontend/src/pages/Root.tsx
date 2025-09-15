@@ -3,7 +3,7 @@ import { HomeContainer, NavbarContainer, SideBarBox } from '../styles/Home.style
 import { TypographyText } from '../components'
 import { Search, Archive, Share, Delete, FileCopy, Save, Print, } from '@mui/icons-material'
 import { SearchBarContainer, SearchComponent, StyledInputBase } from '../styles/SearchBar.styled'
-import { List, Divider, ListItem, ListItemText, ListItemIcon, ListItemButton, Box, SpeedDial, SpeedDialAction, SpeedDialIcon } from '@mui/material'
+import { List, ListItem, ListItemText, ListItemIcon, ListItemButton, Box, SpeedDial, SpeedDialAction, SpeedDialIcon } from '@mui/material'
 import { Container, MainContainer } from '../styles/Container.styled'
 
 
@@ -91,7 +91,7 @@ const SideBar : React.FC = ()=>{
 
   return(
     <SideBarBox role='presentation'>
-    <List sx={{ margin: 'var(--margin-xl) 0 0 0' }}>
+    <List sx={{ margin: '4rem 0 0 0', position: "fixed"  }}>
       {ListOptions.map((props, index)=>(
         <ListItem key={index}>
           <ListItemButton>
