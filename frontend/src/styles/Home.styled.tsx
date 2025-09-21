@@ -26,7 +26,6 @@ export const SideBarBox = styled(Box)(({theme})=>({
     flexShrink: 0,
     width: "250px", 
     height: '100%',
-    position: 'fixed',
     backgroundColor: theme.palette.mode === 'light' ? "#fff" : "#000",
     boxShadow: theme.palette.mode === 'light' ? "0 2px 4px rgba(0,0,0,0.1)" : "0 2px 4px rgba(255,255,255,0.1)",
 }))

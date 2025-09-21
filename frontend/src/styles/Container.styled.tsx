@@ -33,6 +33,10 @@ export const Container = styled('div')<ContainerProp>((props)=>({
     backgroundColor: props.theme.palette.mode === "light" ? props.backgroundColorLight : props.backgroundColorDark,
     position: props.position,
     top: props.top,
+    scrollbarWidth: 'none',
+    overflowY: 'hidden',
+    '&::-webkit-scrollbar': { display: 'none' 
+    }
 
 }))
 
