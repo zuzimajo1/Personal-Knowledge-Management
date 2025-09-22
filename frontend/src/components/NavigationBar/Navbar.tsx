@@ -4,11 +4,13 @@ import { TypographyText } from '../Text/TypographyText'
 import { SearchBarContainer, SearchComponent, StyledInputBase } from '../../styles/SearchBar.styled'
 import { Search } from '@mui/icons-material'
 import { Container } from '../../styles/Container.styled'
+import ThemeToggle from '../ThemeToggle/ThemeToggle'
 
 export const Navbar = () => {
   return (
     <NavbarContainer> 
-        <Container width='100%' display='flex' flexDirection='row' >
+        <Container width='100%' display='flex' flexDirection='row' margin='0 1rem' >
+          <Container width='100%' display='flex'>
           <TypographyText text='Insight Journal' textAlign='left' fontSize='1.5rem' />
           <Container margin='0 0 0 6rem'>
           <SearchComponent>
@@ -18,6 +20,8 @@ export const Navbar = () => {
               <StyledInputBase  placeholder='Search...' inputProps={{ 'aria-label': 'search' }}/>
           </SearchComponent>
           </Container>
+          </Container>
+          <ThemeToggle/>
         </Container>
     </NavbarContainer>
   )

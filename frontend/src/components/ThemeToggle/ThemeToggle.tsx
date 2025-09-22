@@ -9,7 +9,7 @@ const ThemeToggle: React.FC = () => {
       const { toggleThemeMode } = useContext(ColorModeContext);
 
   return (
-    <Container border='1px solid gray' height='auto' width='auto' backgroundColorLight='#e9ebeeff' borderRadius='2rem'>
+    <Container display='flex' flexDirection='row' border='1px solid gray' height='auto' width='auto' backgroundColorLight='#e9ebeeff' borderRadius='2rem'>
           <IconButton size='small' onClick={toggleThemeMode}  sx={{ visibility: theme.palette.mode === 'light' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s', transition: 'opacity 0.5s', transitionDelay: '0.3s' }}>
             <WbSunny fontSize='medium' htmlColor='#a7a738ff'  />
           </IconButton>
