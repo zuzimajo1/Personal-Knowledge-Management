@@ -28,8 +28,7 @@ const Home: React.FC = () => {
     <ContentContainer>
       <TypographyText text='Welcome to Insight Journal' textAlign='center' fontSize='2rem' fontWeight='600' margin='var(--margin-lg) 0 0 0' />
       <TypographyText text='Your personal space to capture thoughts, ideas, and reflections.' textAlign='center' fontSize='1.2rem' fontWeight='400' margin='var(--margin-sm) 0 0 0' />  
-        <Container display='flex' justifyContent='center' alignItems='center' width='100%' height='100%' border='1px solid red'>
-        </Container>
+      
 
     </ContentContainer>
   )
