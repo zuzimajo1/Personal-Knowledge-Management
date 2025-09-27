@@ -5,6 +5,7 @@ import { Archive, Share, Delete, Note, } from '@mui/icons-material'
 import { List, ListItem, ListItemText, ListItemIcon, ListItemButton} from '@mui/material'
 import { Container } from '../styles/Container.styled'
 import { Navbar } from '../components/NavigationBar/Navbar'
+import Notes from '../components/Notes/Notes'
 
 
 export const Root: React.FC = () => {
@@ -23,13 +24,11 @@ export const Root: React.FC = () => {
 
 const Home: React.FC = () => {
 
-
   return (
     <ContentContainer>
       <TypographyText text='Welcome to Insight Journal' textAlign='center' fontSize='2rem' fontWeight='600' margin='var(--margin-lg) 0 0 0' />
       <TypographyText text='Your personal space to capture thoughts, ideas, and reflections.' textAlign='center' fontSize='1.2rem' fontWeight='400' margin='var(--margin-sm) 0 0 0' />  
-      
-
+      <Notes />
     </ContentContainer>
   )
 }
