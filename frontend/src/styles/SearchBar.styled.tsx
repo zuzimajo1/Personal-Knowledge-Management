@@ -11,7 +11,6 @@ export const SearchBarContainer = styled('div')(({ theme })=>({
 }));
 
 
-
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
@@ -32,7 +31,6 @@ export const SearchComponent = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   marginRight: theme.spacing(2),
   width: '100%',
-
 
    '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),

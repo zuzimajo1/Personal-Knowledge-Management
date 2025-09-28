@@ -33,11 +33,6 @@ export const Container = styled('div')<ContainerProp>((props)=>({
     backgroundColor: props.theme.palette.mode === "light" ? props.backgroundColorLight : props.backgroundColorDark,
     position: props.position,
     top: props.top,
-    scrollbarWidth: 'none',
-    overflowY: 'hidden',
-    '&::-webkit-scrollbar': { display: 'none' 
-    }
-
 }))
 
 export const AuthSection = styled('section')({
@@ -65,6 +60,7 @@ export const AutoVerticalContainer = styled('div')({
 })
 
 
-
-
-
+export const GridContainer = styled('div')({
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+})
