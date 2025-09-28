@@ -1,10 +1,9 @@
-import React from 'react'
 import { NavbarContainer } from '../../styles/Home.styled'
 import { TypographyText } from '../Text/TypographyText'
 import { SearchBarContainer, SearchComponent, StyledInputBase } from '../../styles/SearchBar.styled'
 import { Search } from '@mui/icons-material'
 import { Container } from '../../styles/Container.styled'
-import ThemeToggle from '../ThemeToggle/ThemeToggle'
+import { ThemeToggle } from '../ThemeToggle/ThemeToggle'
 
 export const Navbar = () => {
   return (

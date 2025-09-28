@@ -1,9 +1,7 @@
-import React from 'react'
 import { NotesStyled } from '../../styles/Notes.styled'
-import { TypographyText } from '../Text/TypographyText';
 import { GridContainer } from '../../styles/Container.styled';
 
-const Notes = () => {
+export const Notes = () => {
 
 
 interface Note {
@@ -198,12 +196,13 @@ const notes: Note[] = [
    {
     id: '4',
     title: 'Fourth Note',
-    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    content: "ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis consectetur cupiditate suscipit mollitia! ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis",
+    
     createdAt: '2023-10-04T13:00:00Z',
     updatedAt: '2023-10-04T13:00:00Z',
     sharedWith: ['user6'],
   },
-  
+
 ]
 
 
@@ -219,5 +218,3 @@ const notes: Note[] = [
     </GridContainer>
   )
 }
-
-export default Notes

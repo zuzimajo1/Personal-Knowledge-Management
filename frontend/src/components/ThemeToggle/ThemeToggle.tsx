@@ -4,13 +4,13 @@ import { IconButton, useTheme } from '@mui/material'
 import { Brightness3, WbSunny } from '@mui/icons-material'
 import { ColorModeContext } from '../../ColorModeContent'
 
-const ThemeToggle: React.FC = () => {
+export const ThemeToggle: React.FC = () => {
       const theme = useTheme();
       const { toggleThemeMode } = useContext(ColorModeContext);
 
   return (
-    <Container display='flex' flexDirection='row' border='1px solid gray' height='auto' width='auto' backgroundColorLight='#e9ebeeff' borderRadius='2rem'>
-          <IconButton size='small' onClick={toggleThemeMode}  sx={{ visibility: theme.palette.mode === 'light' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s', transition: 'opacity 0.5s', transitionDelay: '0.3s' }}>
+    <Container display='flex' justifyContent="space-between" border='1px solid gray' height='auto' width='auto' backgroundColorLight='#e9ebeeff' borderRadius='1.5rem'>
+          <IconButton size='small' onClick={toggleThemeMode}  sx={{ visibility: theme.palette.mode === 'light' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s', transition: 'opacity 0.5s', transitionDelay: '0.3s', }}>
             <WbSunny fontSize='medium' htmlColor='#a7a738ff'  />
           </IconButton>
           <IconButton size='small' onClick={toggleThemeMode} sx={{ visibility: theme.palette.mode === 'dark' ? 'visible' : 'hidden', animation: 'fadeIn 0.5s' , transition: 'opacity 0.5s', transitionDelay: '0.3s' }}>
@@ -19,5 +19,3 @@ const ThemeToggle: React.FC = () => {
     </Container>
   )
 }
-
-export default ThemeToggle

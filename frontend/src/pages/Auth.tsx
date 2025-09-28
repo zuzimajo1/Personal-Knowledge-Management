@@ -1,11 +1,8 @@
 import type React from 'react'
-import { AuthSection, Container, MainContainer } from '../styles/Container.styled'
-import { ButtonComponent, TypographyText } from '../components';
-import { Form, Input } from '../styles/Auth.styled';
+import { ButtonComponent, ThemeToggle, TypographyText } from '../components';
 import { IconButton, Stack } from '@mui/material';
 import { Facebook, GitHub, Google } from '@mui/icons-material';
-
-import ThemeToggle from '../components/ThemeToggle/ThemeToggle';
+import { AuthSection, Container, Form, Input, MainContainer } from '../styles';
 
 export const Auth: React.FC = ()=> {
 return (
