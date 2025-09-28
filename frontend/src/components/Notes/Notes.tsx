@@ -1,6 +1,7 @@
 import React from 'react'
 import { NotesStyled } from '../../styles/Notes.styled'
 import { TypographyText } from '../Text/TypographyText';
+import { GridContainer } from '../../styles/Container.styled';
 
 const Notes = () => {
 
@@ -48,12 +49,166 @@ const notes: Note[] = [
     createdAt: '2023-10-04T13:00:00Z',
     updatedAt: '2023-10-04T13:00:00Z',
     sharedWith: ['user6'],
-  }
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note.",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+   {
+    id: '4',
+    title: 'Fourth Note',
+    content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
+    createdAt: '2023-10-04T13:00:00Z',
+    updatedAt: '2023-10-04T13:00:00Z',
+    sharedWith: ['user6'],
+  },
+  
 ]
 
 
   return (
-    <>
+    <GridContainer>
     {notes.map((note)=>(
       <NotesStyled key={note.id}>
         <p>{note.title}</p>
@@ -61,7 +216,7 @@ const notes: Note[] = [
         <p>{`Created at ${note.createdAt}`}</p>
       </NotesStyled>
     ))}
-    </>
+    </GridContainer>
   )
 }
 
