@@ -1,5 +1,6 @@
 import { NotesStyled } from '../../styles/Notes.styled'
 import { GridContainer } from '../../styles/Container.styled';
+import { TypographyText } from '../Text/TypographyText';
 
 export const Notes = () => {
 
@@ -210,9 +211,8 @@ const notes: Note[] = [
     <GridContainer>
     {notes.map((note)=>(
       <NotesStyled key={note.id}>
-        <p>{note.title}</p>
-        <p>{note.content}</p>
-        <p>{`Created at ${note.createdAt}`}</p>
+        <TypographyText textAlign='center' variant='inherit' text={note.title} />
+        <TypographyText textAlign='justify' variant='caption' text={note.content} />
       </NotesStyled>
     ))}
     </GridContainer>
