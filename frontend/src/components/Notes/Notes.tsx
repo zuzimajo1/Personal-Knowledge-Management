@@ -1,5 +1,5 @@
-import { NotesStyled } from '../../styles/Notes.styled'
-import { GridContainer } from '../../styles/Container.styled';
+
+import { GridContainer, NotesOptionsSection, NotesStyled } from '../../styles';
 import { TypographyText } from '../Text/TypographyText';
 
 export const Notes = () => {
@@ -213,6 +213,9 @@ const notes: Note[] = [
       <NotesStyled key={note.id}>
         <TypographyText textAlign='center' variant='inherit' text={note.title} />
         <TypographyText textAlign='justify' variant='caption' text={note.content} />
+        <NotesOptionsSection>
+
+        </NotesOptionsSection>
       </NotesStyled>
     ))}
     </GridContainer>

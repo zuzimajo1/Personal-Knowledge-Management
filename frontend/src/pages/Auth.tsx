@@ -46,8 +46,6 @@ const LoginForm: React.FC = ()=>{
 
 const LoginOptions: React.FC = ()=>{
 
-
-
   return (
     <Container width='100%' margin='var(--margin-md) 0'>
       <TypographyText text='Or Sign Up Using'  textAlign='center' margin='var(--margin-xs) 0 var(--margin-sm) 0'/>
