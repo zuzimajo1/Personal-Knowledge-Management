@@ -9,12 +9,14 @@ export const NotesStyled = styled('div')(({theme})=>({
     padding: '1rem',
     borderRadius: '8px',
     boxShadow: theme.palette.mode === 'light' ? "0 2px 4px rgba(0,0,0,0.1)" : "0 2px 4px rgba(255,255,255,0.1)",
+    position: 'relative',
 
     '&:hover::-webkit-scrollbar': {
         display: "block",
         transform: "scale(1.2)",
         transition: "transform 0.2s",
         borderRadius: '8px',
+        position: 'relative',
     },
     '&::-webkit-scrollbar': {
         width: '12px',
@@ -30,3 +32,14 @@ export const NotesStyled = styled('div')(({theme})=>({
     },
 
 }));
+
+
+export const NotesOptionsSection = styled('div')({
+    display: 'flex',
+    justifyContent: 'end',
+    height: '20px',
+    width: '100%',
+    border: '1px solid red',
+    position: 'absolute',
+    bottom: '0',
+})
