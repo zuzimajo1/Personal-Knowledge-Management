@@ -62,5 +62,5 @@ export const AutoVerticalContainer = styled('div')({
 
 export const GridContainer = styled('div')({
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
 })
