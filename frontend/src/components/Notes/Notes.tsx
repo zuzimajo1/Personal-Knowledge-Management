@@ -1,5 +1,5 @@
 
-import { GridContainer, NotesOptionsSection, NotesStyled } from '../../styles';
+import { Container, GridContainer, NotesContentSection, NotesOptionsSection, NotesStyled } from '../../styles';
 import { TypographyText } from '../Text/TypographyText';
 
 export const Notes = () => {
@@ -197,7 +197,7 @@ const notes: Note[] = [
    {
     id: '4',
     title: 'Fourth Note',
-    content: "ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis consectetur cupiditate suscipit mollitia! ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis",
+    content: "ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis consectetur cupiditate suscipit mollitia! ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis consectetur cupiditate suscipit mollitia! ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis",
     
     createdAt: '2023-10-04T13:00:00Z',
     updatedAt: '2023-10-04T13:00:00Z',
@@ -212,7 +212,9 @@ const notes: Note[] = [
     {notes.map((note)=>(
       <NotesStyled key={note.id}>
         <TypographyText textAlign='center' variant='inherit' text={note.title} />
+        <NotesContentSection >
         <TypographyText textAlign='justify' variant='caption' text={note.content} />
+        </NotesContentSection>
         <NotesOptionsSection>
 
         </NotesOptionsSection>

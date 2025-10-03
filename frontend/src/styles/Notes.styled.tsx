@@ -1,20 +1,38 @@
 import { styled } from "@mui/material";
 
 export const NotesStyled = styled('div')(({theme})=>({
-    width: '300px',
-    height: '300px',
+    width: '350px',
+    height: 'auto',
     alignItems: "center",
     backgroundColor: theme.palette.mode === 'light' ? '#f8f1f1ff' : '#2c2c2c',
     margin: '1rem',
-    padding: '1rem',
+    paddingTop: '1rem',
     borderRadius: '8px',
     boxShadow: theme.palette.mode === 'light' ? "0 2px 4px rgba(0,0,0,0.1)" : "0 2px 4px rgba(255,255,255,0.1)",
     position: 'relative',
+}));
 
+
+export const NotesOptionsSection = styled('div')({
+    display: 'flex',
+    justifyContent: 'end',
+    height: '30px',
+    flex: 1,
+    border: '1px solid red',
+    position: 'relative',
+    bottom: '0',
+})
+
+export const NotesContentSection = styled('div')({
+    height: '300px',
+    flex: 1,
+    overflowY: 'auto',
+    scrollBehavior: 'smooth',
+    padding: '0 1rem',
+    position: 'relative',
+    
     '&:hover::-webkit-scrollbar': {
         display: "block",
-        transform: "scale(1.2)",
-        transition: "transform 0.2s",
         borderRadius: '8px',
         position: 'relative',
     },
@@ -30,16 +48,4 @@ export const NotesStyled = styled('div')(({theme})=>({
         borderRadius: '8px',
         border: '2px solid #f5ededff',
     },
-
-}));
-
-
-export const NotesOptionsSection = styled('div')({
-    display: 'flex',
-    justifyContent: 'end',
-    height: '20px',
-    width: '100%',
-    border: '1px solid red',
-    position: 'absolute',
-    bottom: '0',
 })
