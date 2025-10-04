@@ -1,6 +1,8 @@
 
 import { Container, GridContainer, NotesContentSection, NotesOptionsSection, NotesStyled } from '../../styles';
 import { TypographyText } from '../Text/TypographyText';
+import { Edit, Info, Visibility } from '@mui/icons-material';
+import { Tooltip } from '@mui/material';
 
 export const Notes = () => {
 
@@ -215,8 +217,16 @@ const notes: Note[] = [
         <NotesContentSection >
         <TypographyText textAlign='justify' variant='caption' text={note.content} />
         </NotesContentSection>
-        <NotesOptionsSection>
-
+        <NotesOptionsSection className='notes-options-section'>
+          <Tooltip title="Edit">
+          <Edit  sx={{ fontSize: 20, cursor: 'pointer'}} />
+          </Tooltip>
+          <Tooltip title="View">
+          <Visibility  sx={{marginLeft: '8px', fontSize: 20, cursor: 'pointer'}} />
+          </Tooltip>
+          <Tooltip title="Info">
+          <Info  sx={{ marginLeft: '8px', fontSize: 20, cursor: 'pointer'}} />
+          </Tooltip>
         </NotesOptionsSection>
       </NotesStyled>
     ))}
