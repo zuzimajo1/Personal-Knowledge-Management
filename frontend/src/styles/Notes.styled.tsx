@@ -10,17 +10,27 @@ export const NotesStyled = styled('div')(({theme})=>({
     borderRadius: '8px',
     boxShadow: theme.palette.mode === 'light' ? "0 2px 4px rgba(0,0,0,0.1)" : "0 2px 4px rgba(255,255,255,0.1)",
     position: 'relative',
+
+
+    '&:hover .notes-options-section': {
+        visibility: 'visible',
+        transition: 'visibility 1s, opacity 1s',
+        opacity: 1,
+    },
 }));
 
 
 export const NotesOptionsSection = styled('div')({
     display: 'flex',
     justifyContent: 'end',
+    alignItems: 'center',
+    paddingRight: '1rem',
     height: '30px',
     flex: 1,
-    border: '1px solid red',
     position: 'relative',
     bottom: '0',
+    visibility: 'hidden',
+
 })
 
 export const NotesContentSection = styled('div')({
