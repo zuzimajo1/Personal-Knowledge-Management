@@ -1,6 +1,6 @@
 import { styled } from "@mui/material";
 
-export interface ContainerProp {
+ interface ContainerProp {
     display?: string;
     vertical?: boolean;
     flexDirection?: string;
