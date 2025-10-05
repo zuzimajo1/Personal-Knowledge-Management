@@ -1,7 +1,7 @@
 
-import { Container, GridContainer, NotesContentSection, NotesOptionsSection, NotesStyled } from '../../styles';
+import { Container, GridContainer, NotesContentSection, NotesCreateSection, NotesOptionsSection, NotesStyled, NotesText } from '../../styles';
 import { TypographyText } from '../Text/TypographyText';
-import { Edit, Info, Visibility } from '@mui/icons-material';
+import { Edit, Info, Visibility, Add, Note, ManageAccounts } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
 
 export const Notes = () => {
@@ -205,15 +205,22 @@ const notes: Note[] = [
     updatedAt: '2023-10-04T13:00:00Z',
     sharedWith: ['user6'],
   },
-
 ]
 
-
   return (
+    <>
     <GridContainer>
+      <NotesStyled>
+        <NotesCreateSection>
+        <NotesText className='notetext' margin='1rem' color='#707070' fontSize='2rem'>Create Note</NotesText>
+        <Container height='150px' width='100%'>
+        <Note className='AddIcon' sx={{ fontSize: 100, color: '#707070'}}/>
+        </Container>
+        </NotesCreateSection>
+      </NotesStyled>
     {notes.map((note)=>(
       <NotesStyled key={note.id}>
-        <TypographyText textAlign='center' variant='inherit' text={note.title} />
+        <TypographyText margin='var(--margin-sm) 0 0 0' textAlign='center' variant='inherit' text={note.title} />
         <NotesContentSection >
         <TypographyText textAlign='justify' variant='caption' text={note.content} />
         </NotesContentSection>
@@ -227,9 +234,13 @@ const notes: Note[] = [
           <Tooltip title="Info">
           <Info  sx={{ marginLeft: '8px', fontSize: 20, cursor: 'pointer'}} />
           </Tooltip>
+          <Tooltip title="Manage">
+          <ManageAccounts sx={{ marginLeft: '8px', fontSize: 20, cursor: 'pointer'}} />
+          </Tooltip>
         </NotesOptionsSection>
       </NotesStyled>
     ))}
     </GridContainer>
+    </>
   )
 }
