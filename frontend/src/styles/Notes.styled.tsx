@@ -13,9 +13,6 @@ export const NotesText = styled('p')<NotesTextProp>(({color, fontSize, theme, ma
 }))
 
 
-
-
-
 export const NotesStyled = styled('div')(({theme})=>({
     width: '350px',
     height: 'auto',
