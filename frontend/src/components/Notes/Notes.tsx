@@ -3,6 +3,7 @@ import { Container, GridContainer, NotesContentSection, NotesCreateSection, Note
 import { TypographyText } from '../Text/TypographyText';
 import { Edit, Info, Visibility, Add, Note, ManageAccounts } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
+import { useLocation } from 'react-router';
 
 export const Notes = () => {
 
@@ -52,7 +53,7 @@ const notes: Note[] = [
     sharedWith: ['user6'],
   },
    {
-    id: '4',
+    id: '5',
     title: 'Fourth Note',
     content: "This is my fourth note.",
     createdAt: '2023-10-04T13:00:00Z',
@@ -207,19 +208,20 @@ const notes: Note[] = [
   },
 ]
 
+const location = useLocation();
   return (
     <>
     <GridContainer>
-      <NotesStyled>
+      {location.pathname === '/' && <NotesStyled>
         <NotesCreateSection>
         <NotesText className='notetext' margin='1rem' color='#707070' fontSize='2rem'>Create Note</NotesText>
         <Container height='150px' width='100%'>
         <Note className='AddIcon' sx={{ fontSize: 100, color: '#707070'}}/>
         </Container>
         </NotesCreateSection>
-      </NotesStyled>
-    {notes.map((note)=>(
-      <NotesStyled key={note.id}>
+      </NotesStyled> }
+    {notes.map((note, index)=>(
+      <NotesStyled key={index}>
         <TypographyText margin='var(--margin-sm) 0 0 0' textAlign='center' variant='inherit' text={note.title} />
         <NotesContentSection >
         <TypographyText textAlign='justify' variant='caption' text={note.content} />
