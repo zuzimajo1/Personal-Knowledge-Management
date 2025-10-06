@@ -32,7 +32,7 @@ const Home: React.FC = () => {
 
 
 
-const ContentComponent : React.FC<{children?:React.ReactNode}> = ({children})=>{
+export const ContentComponent : React.FC<{children?:React.ReactNode}> = ({children})=>{
   return (
     <Container display='flex' width='100vw' height='100vh' flexDirection='row' position='relative'>
       {children}
