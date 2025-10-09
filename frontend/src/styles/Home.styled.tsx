@@ -4,6 +4,7 @@ export const HomeContainer = styled('main')(({theme})=>({
     width: "100vw",
     height: "100vh",
     backgroundColor: theme.palette.mode === 'light' ? "#DDEFFD" : "#1A072D",
+  
 })) 
 
 
@@ -25,7 +26,30 @@ export const NavbarContainer = styled('nav')(({theme})=>({
 export const SideBarBox = styled(Box)(({theme})=>({
     flexShrink: 0,
     width: "250px", 
-    height: "100%",
+    height: 'auto',
+    left: 0,
     backgroundColor: theme.palette.mode === 'light' ? "#fff" : "#000",
     boxShadow: theme.palette.mode === 'light' ? "0 2px 4px rgba(0,0,0,0.1)" : "0 2px 4px rgba(255,255,255,0.1)",
+}))
+
+
+export const ContentContainer = styled('main')(({theme})=>({
+    marginTop: '3rem',  
+    flex: 1,
+    width: "100vw",
+    backgroundColor: theme.palette.mode === "light" ? "rgba(106,200,225,255)" : "rgba(14,51,95,255)",
+    overflowY: 'auto',
+    scrollBehavior: 'smooth',
+    '&::-webkit-scrollbar': {
+        width: '12px',
+    },
+    '&::-webkit-scrollbar-track': {
+        backgroundColor: '#f5ededff',
+    },
+    '&::-webkit-scrollbar-thumb': {
+        backgroundColor: '#b3b3b3',
+        borderRadius: '8px',
+        border: '2px solid #f5ededff',
+    },
+
 }))

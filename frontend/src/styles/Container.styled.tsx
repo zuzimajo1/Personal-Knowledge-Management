@@ -1,6 +1,6 @@
 import { styled } from "@mui/material";
 
-export interface ContainerProp {
+ interface ContainerProp {
     display?: string;
     vertical?: boolean;
     flexDirection?: string;
@@ -33,7 +33,6 @@ export const Container = styled('div')<ContainerProp>((props)=>({
     backgroundColor: props.theme.palette.mode === "light" ? props.backgroundColorLight : props.backgroundColorDark,
     position: props.position,
     top: props.top,
-
 }))
 
 export const AuthSection = styled('section')({
@@ -61,6 +60,7 @@ export const AutoVerticalContainer = styled('div')({
 })
 
 
-
-
-
+export const GridContainer = styled('div')({
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+})
