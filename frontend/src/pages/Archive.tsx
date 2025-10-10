@@ -6,7 +6,6 @@ import { useLocation } from 'react-router'
 
 const Archive: React.FC = () => {
   const location = useLocation();
-  console.log(location);
 
   return (
     <HomeContainer>
