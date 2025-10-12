@@ -4,7 +4,11 @@ import { List, ListItem, ListItemText, ListItemIcon, ListItemButton} from '@mui/
 import { SideBarBox } from '../../styles/Home.styled';
 import { NavLink } from 'react-router';
 
-export const SideBar : React.FC = ()=>{
+interface Props {
+  path: string;
+}
+
+export const SideBar : React.FC<Props> = (props)=>{
 
   const ListOptions = [
     // { text: "Create Note", icon: <Note /> },
@@ -19,7 +23,7 @@ export const SideBar : React.FC = ()=>{
     <List sx={{ margin: '4rem 0 0 0'}}>
       {ListOptions.map(({text, icon, link}, index)=>(
         <ListItem key={index}>
-          <NavLink to={link} style={{ width: '100%', textDecoration: 'none', color: 'inherit' }}>
+          <NavLink to={link} style={{ width: '100%', textDecoration: 'none', color: 'inherit', backgroundColor: props.path === link ? '#c5bebeff' : 'inherit' }}>
           <ListItemButton>
             <ListItemIcon>
               {icon}
