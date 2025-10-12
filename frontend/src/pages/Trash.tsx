@@ -2,13 +2,17 @@ import React from 'react'
 import { Container, ContentContainer, HomeContainer } from '../styles'
 import { Navbar, Notes, SideBar, TypographyText } from '../components'
 import { ContentComponent } from './Root'
+import { useLocation } from 'react-router'
 
 const Trash = () => {
+  const location = useLocation();
+  const path = location.pathname;
+
   return (
      <HomeContainer>
       <Navbar/>
         <ContentComponent>
-        <SideBar/>
+        <SideBar path={path}/>
         <TrashContent/>
       </ContentComponent>
     </HomeContainer>
