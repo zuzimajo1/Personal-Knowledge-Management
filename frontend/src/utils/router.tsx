@@ -1,6 +1,6 @@
 
 import { createBrowserRouter, } from 'react-router';
-import { Archive, Root } from '../pages';
+import { Archive, Root, Shared, Trash } from '../pages';
 
 
 // Utility to pause for a given number of milliseconds
@@ -43,6 +43,19 @@ export const router = createBrowserRouter([
   {
     path: "/archive",
     Component: Archive,
+    // loader: async () =>{
+    //     await wait(2000)
+  },
+    {
+    path: "/shared",
+    Component: Shared,
+    // loader: async () =>{
+    //     await wait(2000)
+    // }
+  },
+  {
+    path: "/trash",
+    Component: Trash,
     // loader: async () =>{
     //     await wait(2000)
   },
