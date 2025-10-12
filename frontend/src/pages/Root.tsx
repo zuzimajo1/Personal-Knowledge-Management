@@ -1,15 +1,18 @@
 import React from 'react'
 import { SideBar, TypographyText, Notes, Navbar } from '../components'
 import { Container, ContentContainer, HomeContainer } from '../styles'
+import { useLocation } from 'react-router';
 
 
 export const Root: React.FC = () => {
+  const location = useLocation();
+  const path = location.pathname
 
   return (
     <HomeContainer>
       <Navbar/>
       <ContentComponent>
-      <SideBar/>
+      <SideBar path={path}/>
       <Home/>
       </ContentComponent>
     </HomeContainer>

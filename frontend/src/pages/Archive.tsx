@@ -6,12 +6,13 @@ import { useLocation } from 'react-router'
 
 const Archive: React.FC = () => {
   const location = useLocation();
+  const path = location.pathname
 
   return (
     <HomeContainer>
       <Navbar/>
       <ContentComponent>
-        <SideBar/>
+        <SideBar path={path} />
         <ArchiveContent/>
       </ContentComponent>
     </HomeContainer>
