@@ -1,26 +1,9 @@
 import React from 'react'
-import { Container, ContentContainer, HomeContainer } from '../styles'
-import { Navbar, Notes, SideBar, TypographyText } from '../components'
-import { ContentComponent } from './Root'
-import { useLocation } from 'react-router'
+import { Container, ContentContainer} from '../styles'
+import { Notes, TypographyText } from '../components'
+ 
+const Shared: React.FC = () => {
 
-const Shared = () => {
-  const location = useLocation();
-  const path = location.pathname
-
-  return (
-    <HomeContainer>
-      <Navbar/>
-        <ContentComponent>
-          <SideBar path={path}/>
-          <SharedContent/>
-      </ContentComponent>
-    </HomeContainer>
-  )
-}
-
-
-const SharedContent: React.FC = ()=> {
   return (
     <ContentContainer>
       <TypographyText text='Shared To You' textAlign='center' fontSize='2rem' fontWeight='600' margin='var(--margin-lg) 0 0 0' />
@@ -30,5 +13,6 @@ const SharedContent: React.FC = ()=> {
     </ContentContainer>
   )
 }
+
 
 export default Shared
