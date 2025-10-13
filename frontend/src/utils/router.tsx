@@ -1,6 +1,6 @@
 
 import { createBrowserRouter, } from 'react-router';
-import { Archive, Root, Shared, Trash } from '../pages';
+import { Archive, Home, Root, Shared, Trash } from '../pages';
 
 
 // Utility to pause for a given number of milliseconds
@@ -32,31 +32,45 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 // };
 
 
+// export const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     Component: Root,
+//     // loader: async () =>{
+//     //     await wait(2000)
+//     // }
+//   },
+//   {
+//     path: "/archive",
+//     Component: Archive,
+//     // loader: async () =>{
+//     //     await wait(2000)
+//   },
+//     {
+//     path: "/shared",
+//     Component: Shared,
+//     // loader: async () =>{
+//     //     await wait(2000)
+//     // }
+//   },
+//   {
+//     path: "/trash",
+//     Component: Trash,
+//     // loader: async () =>{
+//     //     await wait(2000)
+//   },
+// ]);
+
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    // loader: async () =>{
-    //     await wait(2000)
-    // }
-  },
-  {
-    path: "/archive",
-    Component: Archive,
-    // loader: async () =>{
-    //     await wait(2000)
-  },
-    {
-    path: "/shared",
-    Component: Shared,
-    // loader: async () =>{
-    //     await wait(2000)
-    // }
-  },
-  {
-    path: "/trash",
-    Component: Trash,
-    // loader: async () =>{
-    //     await wait(2000)
-  },
-]);
+    children: [
+      { index: true, Component: Home },
+      {path: "/archive", Component: Archive},
+      {path: "/shared", Component: Shared},
+      {path: "/trash", Component: Trash},
+    ]
+  }
+])
+
