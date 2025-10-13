@@ -1,6 +1,6 @@
 
 import { createBrowserRouter, } from 'react-router';
-import { Archive, Home, Root, Shared, Trash } from '../pages';
+import { Archive, Home, NotFound, Root, Shared, Trash } from '../pages';
 
 
 // Utility to pause for a given number of milliseconds
@@ -71,6 +71,11 @@ export const router = createBrowserRouter([
       {path: "/shared", Component: Shared},
       {path: "/trash", Component: Trash},
     ]
+  },
+  {
+    path: "*",
+    Component: NotFound,
   }
+  
 ])
 
