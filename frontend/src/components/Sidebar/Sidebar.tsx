@@ -11,7 +11,6 @@ interface Props {
 export const SideBar : React.FC<Props> = (props)=>{
 
   const ListOptions = [
-    // { text: "Create Note", icon: <Note /> },
     { text: "Home", icon: <Home />, link: "/"},
     { text: "Archived", icon: <Archive />, link: "/archive" },
     { text: "Shared", icon: <Share/>, link: "/shared"  },
