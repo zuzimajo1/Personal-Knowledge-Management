@@ -59,9 +59,7 @@ const LoginOptions: React.FC = ()=>{
             <Facebook fontSize="large" htmlColor="#1877F3"  />
           </IconButton>
         </Stack>
-        <Container display='flex' flexDirection='row' justifyContent='center' width='100%' height='auto' margin='var(--margin-lg) 0 0 0'>
-        <ThemeToggle/>
-        </Container>
+
     </Container>
   )
 }

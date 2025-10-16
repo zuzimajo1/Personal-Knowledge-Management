@@ -4,6 +4,11 @@ export const HomeContainer = styled('main')(({theme})=>({
     width: "100vw",
     height: "100vh",
     backgroundColor: theme.palette.mode === 'light' ? "#DDEFFD" : "#1A072D",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    
+
   
 })) 
 
