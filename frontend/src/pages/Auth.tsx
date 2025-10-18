@@ -39,6 +39,7 @@ const LoginForm: React.FC = ()=>{
     <Form>
       <Input variant="standard" size='small' label='Email' name='email' />
       <Input variant="standard" size='small' label='Password' name='password'/>
+      
     </Form>
   )
 }
