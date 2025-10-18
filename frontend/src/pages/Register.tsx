@@ -35,21 +35,25 @@ const RegisterWrapper : React.FC = ()=>{
 }
 
 const RegisterForm: React.FC = ()=> {
+  const [showPassword, setshowPassword] = React.useState(false);
+  const handleshowPasswordChange = ()=>{
+    setshowPassword(!showPassword);
+  }
+
+
   return (
     <Form>
-      <Input variant="standard" size='small' label='Firstname' name='firstname' />
+      <Input autoComplete='false' variant="standard" size='small' label='Firstname' name='firstname' />
       <Input variant="standard" size='small' label='Lastname' name='lastname'/>
       <Input variant="standard" size='small' label='Email' name='email' />
-      <Input type='password' variant="standard" size='small' label='Password' name='password'/>
-      <Input type='password' variant="standard" size='small' label='Confirm Password' name='confirmpassword'/>
-      <Container display='flex'   width='100%' height='auto' margin='var(--margin-sm) 0'>
-      <Input type='checkbox' />
-      <TypographyText textAlign='center' variant="h6"  text='Show password' />
+      <Input type={showPassword ? 'text' : 'password'} variant="standard" size='small' label='Password' name='password'/>
+      <Input type={showPassword ? 'text' : 'password'} variant="standard" size='small' label='Confirm Password' name='confirmpassword'/>
+      <Container display='flex' width='100%' height='auto'>
+      <input onClick={handleshowPasswordChange} type='checkbox' name='showpassword' style={{marginRight: '0.5rem'}} />
+      <TypographyText textAlign='center' variant="subtitle2"  text='Show password' />
       </Container>
     </Form>
   )
 }
-
-
 
 export default Register

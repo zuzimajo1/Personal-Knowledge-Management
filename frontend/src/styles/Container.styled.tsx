@@ -18,7 +18,6 @@ import { styled } from "@mui/material";
     top?: string,
 }
 
-
 export const Container = styled('div')<ContainerProp>((props)=>({
     display: props.display,
     width: props.width,
@@ -41,7 +40,6 @@ export const AuthSection = styled('section')({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-
 })
 
 export const MainContainer = styled('main')(({theme})=>({
