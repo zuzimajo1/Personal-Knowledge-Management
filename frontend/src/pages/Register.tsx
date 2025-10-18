@@ -42,6 +42,10 @@ const RegisterForm: React.FC = ()=> {
       <Input variant="standard" size='small' label='Email' name='email' />
       <Input type='password' variant="standard" size='small' label='Password' name='password'/>
       <Input type='password' variant="standard" size='small' label='Confirm Password' name='confirmpassword'/>
+      <Container display='flex'   width='100%' height='auto' margin='var(--margin-sm) 0'>
+      <Input type='checkbox' />
+      <TypographyText textAlign='center' variant="h6"  text='Show password' />
+      </Container>
     </Form>
   )
 }
