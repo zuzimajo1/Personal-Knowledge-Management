@@ -40,7 +40,6 @@ const RegisterForm: React.FC = ()=> {
     setshowPassword(!showPassword);
   }
 
-
   return (
     <Form>
       <Input autoComplete='false' variant="standard" size='small' label='Firstname' name='firstname' />
