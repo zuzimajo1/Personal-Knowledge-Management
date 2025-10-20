@@ -3,6 +3,7 @@ import { Container, GridContainer, NotesContentSection, NotesCreateSection, Note
 import { TypographyText } from '../Text/TypographyText';
 import { Edit, Info, Visibility, Add, Note, ManageAccounts } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
+import Markdown from 'react-markdown';
 import { useLocation } from 'react-router';
 
 export const Notes = () => {
@@ -22,7 +23,7 @@ const notes: Note[] = [
   {
     id: '1',
     title: 'First Notes',
-    content: "This is my first note.",
+    content: "# This is my first note.",
     createdAt: '2023-10-01T10:00:00Z',
     updatedAt: '2023-10-01T10:00:00Z',
     sharedWith: ['user2', 'user3'],
@@ -30,15 +31,15 @@ const notes: Note[] = [
   {
     id: '2',
     title: 'Second Note',
-    content: "This is my second note.",
+    content: "## This is my second note.",
     createdAt: '2023-10-02T11:00:00Z',
     updatedAt: '2023-10-02T11:00:00Z',
     sharedWith: ['user4'],
   },
   {
     id: '3',
-    title: 'Third Note',
-    content: "This is my third note.",
+    title: ' Third Note',
+    content: "This is my third note. **Hello World!** [Link](https://example.com)",
     createdAt: '2023-10-03T12:00:00Z',
     updatedAt: '2023-10-03T12:00:00Z',
     sharedWith: ['user5'],
@@ -224,7 +225,7 @@ const location = useLocation();
       <NotesStyled key={index}>
         <TypographyText margin='var(--margin-sm) 0 0 0' textAlign='center' variant='inherit' text={note.title} />
         <NotesContentSection >
-        <TypographyText textAlign='justify' variant='caption' text={note.content} />
+        <Markdown>{`${note.content}`}</Markdown>
         </NotesContentSection>
         <NotesOptionsSection className='notes-options-section'>
           <Tooltip title="Edit">
