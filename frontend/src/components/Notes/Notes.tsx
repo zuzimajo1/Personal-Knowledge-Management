@@ -39,8 +39,6 @@ export const Notes = () => {
     const before = currentText.substring(0, start); //text before selection
     const selected = currentText.substring(start, end);  //selected text
     const after = currentText.substring(end); //text after selection
-    console.log(end)
-    console.log(after)
 
     // 2. Check if the text is already formatted to toggle it off (optional feature)
     const isAlreadyFormatted = 
@@ -49,24 +47,42 @@ export const Notes = () => {
         (start - marker.length >= 0) &&
         (end + marker.length <= currentText.length); //ensures we don't go out of bounds
 
-
-
     let newText;
     let newCursorStart;
     let newCursorEnd;
 
-    console.log(before.endsWith(marker));
+    // console.log(after.startsWith(marker));
     // TOGGLE OFF: Remove the surrounding markers
     if (isAlreadyFormatted) {
-      newText = before.substring(0, before.length - marker.length) + selected +   after.substring(marker.length);
-      newCursorStart = start - marker.length;
-      newCursorEnd = end - marker.length;
+// TOGGLE OFF: Remove the surrounding markers
+        newText = 
+            before.substring(0, before.length - marker.length) + 
+            selected + 
+            after.substring(marker.length);
+            
+        newCursorStart = start - marker.length;
+        newCursorEnd = end - marker.length;
 
     }else {
-      // TOGGLE ON: Add the surrounding markers
-      newText = before + marker + selected + marker + after;
+// TOGGLE ON: Add the surrounding markers
+        newText = before + marker + selected + marker + after;
+        
+        // Place the cursor after the inserted markers
+        newCursorStart = start + marker.length;
+        // If text was selected, keep the selection, otherwise place cursor after first marker
+        newCursorEnd = end + marker.length;
 
   }
+    console.log(isAlreadyFormatted);
+    console.log('newtext', newText);
+  // 3. Update the React state
+    setmarkdown(newText);
+    // 4. Restore the cursor/selection *after* React updates the DOM
+    // We use a slight delay or queue the operation to ensure the DOM updates first.
+    setTimeout(() => {
+        textArea.focus();
+        textArea.setSelectionRange(newCursorStart, newCursorEnd);
+    }, 0)
 };
 
 
