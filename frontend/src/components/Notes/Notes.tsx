@@ -11,13 +11,12 @@ export const Notes = () => {
 
   const location = useLocation();
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const [markdown, setmarkdown] = useState('# Start writing your note here');
+  const previewRef = useRef<HTMLDivElement | null>(null);
+  const [markdown, setmarkdown] = useState('Start writing your note here');
 
   const handleMarkdownChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setmarkdown(e.target.value);
   }
-
-
 
   /**
    * Core function to wrap the selected text with a given marker.
@@ -33,12 +32,11 @@ export const Notes = () => {
     const end = textArea.selectionEnd;  //cursor end position
     const currentText = markdown; //current markdown text
 
-
-
 // 1. Get the parts of the text
     const before = currentText.substring(0, start); //text before selection
     const selected = currentText.substring(start, end);  //selected text
     const after = currentText.substring(end); //text after selection
+
 
     // 2. Check if the text is already formatted to toggle it off (optional feature)
     const isAlreadyFormatted = 
@@ -51,9 +49,12 @@ export const Notes = () => {
     let newCursorStart;
     let newCursorEnd;
 
+
     // console.log(after.startsWith(marker));
     // TOGGLE OFF: Remove the surrounding markers
     if (isAlreadyFormatted) {
+
+
 // TOGGLE OFF: Remove the surrounding markers
         newText = 
             before.substring(0, before.length - marker.length) + 
@@ -62,8 +63,8 @@ export const Notes = () => {
             
         newCursorStart = start - marker.length;
         newCursorEnd = end - marker.length;
-
-    }else {
+      
+    } else {
 // TOGGLE ON: Add the surrounding markers
         newText = before + marker + selected + marker + after;
         
@@ -71,10 +72,7 @@ export const Notes = () => {
         newCursorStart = start + marker.length;
         // If text was selected, keep the selection, otherwise place cursor after first marker
         newCursorEnd = end + marker.length;
-
   }
-    console.log(isAlreadyFormatted);
-    console.log('newtext', newText);
   // 3. Update the React state
     setmarkdown(newText);
     // 4. Restore the cursor/selection *after* React updates the DOM
@@ -82,6 +80,7 @@ export const Notes = () => {
     setTimeout(() => {
         textArea.focus();
         textArea.setSelectionRange(newCursorStart, newCursorEnd);
+        // textArea.selectionEnd = newCursorEnd;
     }, 0)
 };
 
@@ -109,187 +108,7 @@ const notes: Note[] = [
     updatedAt: '2023-10-01T10:00:00Z',
     sharedWith: ['user2', 'user3'],
   },
-  // {
-  //   id: '2',
-  //   title: 'Second Note',
-  //   content: "## This is my second note.",
-  //   createdAt: '2023-10-02T11:00:00Z',
-  //   updatedAt: '2023-10-02T11:00:00Z',
-  //   sharedWith: ['user4'],
-  // },
-  // {
-  //   id: '3',
-  //   title: ' Third Note',
-  //   content: "This is my third note. **Hello World!** [Link](https://example.com)",
-  //   createdAt: '2023-10-03T12:00:00Z',
-  //   updatedAt: '2023-10-03T12:00:00Z',
-  //   sharedWith: ['user5'],
-
-  // },
-  // {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note.",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '5',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note.",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "This is my fourth note. This is my fourth note This is my fourth note This is my fourth note ",
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
-  //  {
-  //   id: '4',
-  //   title: 'Fourth Note',
-  //   content: "ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis consectetur cupiditate suscipit mollitia! ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis consectetur cupiditate suscipit mollitia! ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat quas, ut odit quisquam similique provident veniam atque dolore earum libero maxime sint animi omnis perferendis",
-    
-  //   createdAt: '2023-10-04T13:00:00Z',
-  //   updatedAt: '2023-10-04T13:00:00Z',
-  //   sharedWith: ['user6'],
-  // },
 ]
-
 
   return (
     <>
@@ -301,16 +120,74 @@ const notes: Note[] = [
         <Note className='AddIcon' sx={{ fontSize: 100, color: '#707070'}}/>
         </Container>
         </NotesCreateSection>
+        {/* <button onClick={handleBold}>Bold</button>
+        <button onClick={handleItalic}>Italic</button> */}
       </NotesStyled> }
-    {notes.map((note, index)=>(
+    {/* {notes.map((note, index)=>(
       <NotesStyled key={index}>
         <TypographyText margin='var(--margin-sm) 0 0 0' textAlign='center' variant='inherit' text={note.title} />
         <NotesContentSection >
-        <button onClick={handleBold}>Bold</button>
-        <button onClick={handleItalic}>Italic</button>
+        */}
+      
+
+
+    {/*
         <textarea ref={textAreaRef} value={markdown} onChange={handleMarkdownChange} />
-        <Markdown>{`${note.content}`}</Markdown>
-        </NotesContentSection>
+        <Markdown>{`${note.content}`}</Markdown> */}
+
+{/* <NotesContentSection>
+
+  <div style={{ position: 'relative', width: '100%' }}>
+
+    <div
+      ref={previewRef}
+      aria-hidden
+      style={{
+        position: 'absolute',
+        inset: 0,
+        padding: 12,
+        pointerEvents: 'none',
+        whiteSpace: 'pre-wrap',
+        wordBreak: 'break-word',
+        overflow: 'auto',
+        minHeight: 180,
+        color: '#111', // preview text color
+        zIndex: 1,
+        fontSize: '1rem',
+      }}
+    >
+      <Markdown>{markdown}</Markdown>
+    </div> */}
+
+    {/* <textarea
+      ref={textAreaRef}
+      value={markdown}
+      onChange={handleMarkdownChange}
+      onScroll={(e) => {
+        const t = e.target as HTMLTextAreaElement;
+        if (previewRef.current) previewRef.current.scrollTop = t.scrollTop;
+      }}
+      style={{
+        fontSize: '1rem',
+        position: 'relative',
+        zIndex: 2,
+        width: '100%',
+        minHeight: 180,
+        padding: 12,
+        resize: 'vertical',
+        backgroundColor: 'transparent',
+        background: 'transparent',
+        color: 'transparent',       // hide raw text
+        caretColor: '#000',         // keep visible caret
+        border: '1px solid rgba(0,0,0,0.12)',
+        lineHeight: '1.5',
+        fontFamily: 'inherit',
+        overflow: 'auto',
+      }}
+    />
+  </div>
+</NotesContentSection> */}
+
         <NotesOptionsSection className='notes-options-section'>
           <Tooltip title="Edit">
           <Edit  sx={{ fontSize: 20, cursor: 'pointer'}} />
@@ -325,9 +202,9 @@ const notes: Note[] = [
           <ManageAccounts sx={{ marginLeft: '8px', fontSize: 20, cursor: 'pointer'}} />
           </Tooltip>
         </NotesOptionsSection>
-      </NotesStyled>
-    ))}
+      {/* { </NotesStyled>
+    ))} */}
     </GridContainer>
     </>
   )
-}
+} 
